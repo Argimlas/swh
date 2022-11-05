@@ -13,7 +13,7 @@ description = "My awesome website"
 dateFormat = "2 January 2006"
 
 [author]
-  name = "Your name here"
+  name = "Argimlas"
   image = "img/blowfish_logo.png"
   headline = "I'm only human"
   bio = "A little bit about you"
