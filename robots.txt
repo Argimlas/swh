@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://argimlas.github.io/swh/sitemap.xml
