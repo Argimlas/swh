@@ -2,7 +2,7 @@
 # Refer to the theme docs for more details about each of these parameters.
 # https://nunocoracao.github.io/blowfish/docs/getting-started/
 
-theme = "blowfish"
+theme = "noir"
 baseURL = "https://argimlas.github.io/swh/"
 defaultContentLanguage = "en"
 
