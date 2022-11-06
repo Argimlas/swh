@@ -5,9 +5,9 @@ isoCode = "en"
 weight = 1
 rtl = false
 
-title = "Sketching with Hardware"
-# logo = "img/logo.png"
-description = "My awesome website"
+title = "Sketching with hardware"
+logo = "img/logo.png"
+description = "Documentation of my DIY project."
 # copyright = "Copy, _right?_ :thinking_face:"
 
 dateFormat = "2 January 2006"
@@ -18,7 +18,7 @@ dateFormat = "2 January 2006"
   headline = "I'm only human"
   bio = "A little bit about you"
   links = [
-    { email = "mailto:jakob.kuhnle@uni-ulm.de" },
+  #   { email = "mailto:jakob.kuhnle@uni-ulm.de" },
   #   { link = "https://link-to-some-website.com/" },
   #   { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
   #   { apple = "https://www.apple.com" },
