@@ -1,7 +1,7 @@
 ---
 title: "Electrical Engineering"
 date: 2022-11-15T16:38:33+01:00
-draft: true
+draft: false
 ---
 # Electrical Engineering
 
