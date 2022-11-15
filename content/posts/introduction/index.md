@@ -1,6 +1,7 @@
 ---
 title: "First Post - Introduction"
 date: 2022-11-05T15:13:51+01:00
+description: "A short summary about why I chose the subject."
 draft: false
 ---
 Hey, I'm Jakob!
