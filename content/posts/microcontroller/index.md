@@ -162,5 +162,3 @@ Here you can see the circuit:
 ## **Week 3: External Interrupt**
 
 In this week I tried external Interrupts
-
-![vid1](1_Interrupt.mp4)
