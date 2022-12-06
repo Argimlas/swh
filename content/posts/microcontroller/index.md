@@ -4,11 +4,11 @@ date: 2022-12-06T00:29:17+01:00
 draft: false
 ---
 
-In the lecture parts of microcontrollers we got introduced to the Arduino-Ecosystem of boards and shields. Then we learned about board features, as well as the Arduino IDE and the basics of Serial Communication.
+In the lecture parts of microcontrollers we got introduced to the Arduino-Ecosystem of boards and shields. Then we learned about board features, as well as the Arduino IDE and the basics of Serial Communication. I think learning a little about wifi in context with arduino would be interesting, as well as introducing the "millis()" function instead of "delay()" because it's really powerful function if you understand it.
 
 # **Lab**
 
-In the lab part we then experimented hands-on with microctontrollers and different sensors, to get a feeling for everything.
+In the lab part we then experimented hands-on with microcontrollers and different sensors, to get a feeling for everything.
 
 ## **Week 1: Controlling LEDs with a Hall-Sensor and a LDR-Sensor, PlatformIO**
 
@@ -16,7 +16,7 @@ In the first lab I tried some different sensors by controlling the LED-state wit
 
 **Hall- and LDR-Sensor:**
 
-A Hall-Sensor reacts to a megnetic field which then can be read by a microcontroller. The LDR-Sensor works similar only that it reacts to a change of brightness instead to a magnetic field.
+A Hall-Sensor reacts to a magnetic field which then can be read by a microcontroller. The LDR-Sensor works similar only that it reacts to a change of brightness instead to a magnetic field.
 
 Circuit:
 
@@ -78,7 +78,7 @@ Hall-Sensor without magnet (LED1 is turned on), LDR-Sensor covered (LED2 is turn
 
 ## **Week 2: Wifi, Servo-Motor controlled via the Blynk-App**
 
-First I turned on and off a LED over WIFI with a D1 Mini and after that I tried the Blynk App to controll a servo over my phone, you can see the code below.
+First I turned on and off a LED over WIFI with a D1 Mini and after that I tried the Blynk App to control a servo over my phone, you can see the code below.
 
 Code:
 
