@@ -247,4 +247,6 @@ Circuit:
 
 ![img5](5_Circuit_button_interrupt.png)
 
-{{< video src="1_Interrupt" controls="yes">}}
+Here you can see everything in action:
+
+![gif1](1_Interrupt.gif)
