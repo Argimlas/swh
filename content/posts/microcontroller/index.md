@@ -161,4 +161,90 @@ Here you can see the circuit:
 
 ## **Week 3: External Interrupt**
 
-In this week I tried external Interrupts
+In this week I tried external Interrupts, they are helpfull to monitor (user-)input and react to them. The Interrupt Service Routine (ISR) is a callback function with 4 modes:
+ - Low: Interrupt is triggered if pin is low
+ - Change: Interrupt is triggered if pin state changes
+ - Rising: Interrupt is triggered if pin switches from low to high
+ - Falling: Interrupt is triggered if pin switches from high to low 
+ - High: Interrupt is triggered if pin is high
+
+ My idea of using external interrupts was to have two LEDs, of whom one is green and shows that everything works OK and the other one is red and starts blinking if there is a problem.
+ In my case the "problem" gets triggered by a button, after which the green LED turns of and the red one start blinking. If the button gets pressed again the problem is "solved", the red LED truns off and the green one is on again.
+
+ Here you can see the code, I used the "change"- mode for the ISR:
+
+``` C++
+const int ledPin1 = 12; //Grüne LED
+const int ledPin2 = 11; //Rote LED
+const int buttonPin = 2; //Interrupt Button
+int x=0, y=0; //Variablen zum Hochzählen
+int ledToggle1 = HIGH; //Zustand Grüne LED
+int ledToggle2 = LOW; // Zustand Rote LED für Interrupt
+
+//Variablen um timing der Interrupts festzustellen
+unsigned long button_time = 0;      
+unsigned long last_button_time = 0;
+
+int ledState = LOW; //Zustand Rote LED für Blinken
+
+//Variable zum Blinken der Roten LED
+unsigned long previousMillis = 0;
+
+const long interval = 250; //Blink delay der Roten LED
+
+void button_ISR(){
+    button_time = millis();
+    //check to see if increment() was called in the last 250 milliseconds
+    if (button_time - last_button_time > 250){
+        Serial.print("Interrupt ");
+        Serial.print(y++);
+        Serial.println();
+        ledToggle1 = !ledToggle1;
+        digitalWrite(ledPin1, ledToggle1);
+        ledToggle2 = !ledToggle2;
+        digitalWrite(ledPin2, ledToggle2);
+        last_button_time = button_time;
+    }
+}
+
+void setup() {
+    pinMode(ledPin1, OUTPUT);
+    pinMode(ledPin2, OUTPUT);
+    pinMode(buttonPin, INPUT_PULLUP);
+    Serial.begin(9600);
+    attachInterrupt(digitalPinToInterrupt(buttonPin), button_ISR, CHANGE);
+
+    digitalWrite(ledPin1, HIGH);
+}
+
+void loop(){
+    Serial.print("loop " );
+    Serial.print(x++ );
+    Serial.println();
+
+    unsigned long currentMillis = millis();
+
+    if (y%2==1){
+        if (currentMillis - previousMillis >= interval) {
+        // save the last time you blinked the LED
+        previousMillis = currentMillis;
+
+        // if the LED is off turn it on and vice-versa:
+        if (ledState == LOW) {
+        ledState = HIGH;
+        } else {
+        ledState = LOW;
+        }
+
+        // set the LED with the ledState of the variable:
+        digitalWrite(ledPin2, ledState);
+        }
+    }
+}
+```
+
+Circuit:
+
+![img5](5_Circuit_button_interrupt.png)
+
+{{< video src="1_Interrupt" controls="yes">}}
