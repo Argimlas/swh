@@ -17,9 +17,11 @@ When designing its usefull tu creat interlocking parts in order to make the fina
 
 ![img1](bending-structures.png)
 
->Source: https://www.instructables.com/Curved-laser-bent-wood/
+Source: https://www.instructables.com/Curved-laser-bent-wood/
 
 Lastly we learned about safety when working with laser-cutters as well as CNC-mills.
+
+For laser-cutters it is important to only use materials which you can find in the manual of the cutter (in our case Emblaser 2). All other materials should not be used to be cut by the laser-cutter especially if you are not sure which material you have infornt of you.
 
 # Lab
 
@@ -57,7 +59,7 @@ The two notches on the bottom are there to connect the part more secure and a te
 The thickness of the material is 3 mm, I went with a notch 2,8 mm wide which worked out perfectly in the end.
 
 ## Laser Cutting and Final Part
-<>
+
 The final svg then can be loaded into LightBurn.
 
 It is important to choose which cuts have to be made first, in my case the windows, because if you cut the outer edge first the whole part would be loose and could slip while cutting the windows. The reason for this is that there is a ventilation system in the Laser-Cutter which vibrates a little.
