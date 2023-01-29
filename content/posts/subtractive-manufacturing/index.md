@@ -1,5 +1,5 @@
 ---
-title: "Subtraktive Fertigung"
+title: "Subtractive Manufacturing"
 date: 2023-01-28T16:48:14+01:00
 draft: false
 ---
@@ -43,7 +43,7 @@ In the bottom right corner you can see the same two pieces as in the top left co
 
 ![img3](sketch2.png)
 
-Here you can see the second part of my sketch which includes the chassis of my car with some trys on the steering system, everything you can see here has to be 3D-printed.
+Here you can see the second part of my sketch which includes the chassis of my car with some tries on the steering system, everything you can see here has to be 3D-printed.
 
 ## Creating a svg
 
