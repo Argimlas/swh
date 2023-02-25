@@ -14,6 +14,7 @@ In the lab part we then explored some mechanisms with a "Fischertechnik-Baukaste
 ## **Push crank**
 
 First we build a push crank, which transforms a rotational motion into a linear motion.
+In the other direction this is used in a bike with the pedals transforming linear motion into a rotation.
 
 ![img1](pushCrank.gif)
 
