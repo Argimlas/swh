@@ -62,4 +62,10 @@ If you want to create more natural and shapes like figuriens Blender is a popula
 
 When printing a lot of problems can occur, I personally experienced a clogged nozzle, warping and bad overhangs.
 
-TODO insert pictures (4.)
+| ![img4](badOverhang.png) |
+|:--:|
+| *My print with bad overhang in the hole* |
+
+| ![img5](cloggedNozzle.png) |
+|:--:|
+| *My print in which you can see that the nozzle was clogged while printing the bottom part.* |
