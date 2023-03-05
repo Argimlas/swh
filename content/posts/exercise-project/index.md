@@ -58,15 +58,15 @@ I think it would be pretty good to learn about the differnt manufacturing proces
 
 In the beginning of the Semester we had to make a presetation about a DIY project which we thought would be interesting.
 
-I took a project from [Stuff Made Here](https://www.youtube.com/@StuffMadeHere) called "See in complete darkness with touch":
+I took a project from [Stuff Made Here](https://www.youtube.com/@StuffMadeHere):
 
 {{< youtube 8Au47gnXs0w >}}
 
-I wrote the following about if i could do the project:
+I wrote the following about, if I could do the project:
 
 ![img2](progress.png)
 
-I think after this semester i definitely gained a lot of experience so that this project is even easier to implement.
+I think after this semester I definitely gained a lot of experience so that this project is even easier to implement.
 
 Now I know how to use a 3D-printer, so the manufacturing process should be a lot easier then before the semester.
 My exercise project didn't involved a lot of programming so that still would be a challenge but I also communicated with a apple device so there is a little progress as well.
@@ -76,4 +76,4 @@ My exercise project didn't involved a lot of programming so that still would be 
 I am really looking forward to the next semester and working on a bigger project with also a lot more time for it.
 
 I don't really know yet what my project for the second semester will be but I think an autonomous driving car, or a app with which I can controll all the lights of my lego models would be interesting to make.
-Another cool project would be to motorise the manual function of height adjusting my desk which would be controlled via wifi over a website.
+Another cool project would be to motorise the manual function of height adjusting my desk which would be controlled via wifi over a website to safe different prefered heights, etc.
