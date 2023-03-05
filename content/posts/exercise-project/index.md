@@ -23,7 +23,7 @@ I remember the following questions:
 
    Bluetooth.
 
- - Did i programm the bluetooth app myself?
+ - Did I programm the bluetooth app myself?
    
    No I did not.
 
@@ -56,7 +56,7 @@ I think it would be pretty good to learn about the differnt manufacturing proces
 
 ## Progress over the semester
 
-In the beginning of the Semester we had to make a presetation about a DIY project which we thought would be interesting.
+In the beginning of the Semester we had to make a presentation about a DIY project which we thought would be interesting.
 
 I took a project from [Stuff Made Here](https://www.youtube.com/@StuffMadeHere):
 
