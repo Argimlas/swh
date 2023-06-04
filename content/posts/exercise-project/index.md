@@ -3,10 +3,7 @@ title: "Exercise Project"
 date: 2023-02-28T14:05:28+01:00
 draft: false
 ---
-
-##
-
-# Presentation of the exercise project
+## Presentation
 
 We had a small fair to present our projects. Everyone of us got a small space at a table with our posters behind it to present our project to interested people that were invited.
 
