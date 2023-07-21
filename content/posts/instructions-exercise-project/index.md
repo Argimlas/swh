@@ -1,7 +1,7 @@
 ---
 title: "Instructions for Exercise Project"
 date: 2023-06-02T13:33:31+02:00
-draft: false
+draft: true
 ---
 I really wanted to write a documentation/building-instructions for my exercise project so here it is!
 
