@@ -24,6 +24,8 @@ The terminals are supposed to:
  - have a button to send messages to finances
  - have a screen to show messages
 
+On top of that it also would be nice if the send messages to finances could be shown on a website so that finances can open this site on their laptop to read the messages.
+
 The last problem is that the wifi-access-point can be overloaded due to the high amount of people (1500) on a small space.
 Because of this I decided to use a 433mHz radio signal to communicate between the bars and implement everything as a mesh-network to bridge longer distances between bars.
 
@@ -47,7 +49,7 @@ I set myself the following timeline and milestones:
    
    Improve small things if necesary
 
-## First weeks untill the 12.06.23
+### First weeks until the 12.06.23
 
 Contrary to my timeline I spend more time into research about mesh networks and radio modules.
 On top of that my order of the radio modules got lost as well, which set me back a little.
@@ -70,7 +72,7 @@ I also ordered rotary encoders and oled-displays to use for the view and control
 
 Undortunately I did not reached the goal of my first milestone, because I just had decided for a radio module.
 
-## 12.06. - 20.06
+### 12.06. - 20.06
 
 In this week I focused on the view and controll of my bar-terminal.
 
@@ -83,7 +85,7 @@ Im pretty proud of the result so I'm planning to put it on Instructables or a si
 
 I used the SSD1306Ascii-library made bei greiman which is pretty resourcefull and not overloaded.
 
-## 20.06. - 26.06.
+### 20.06. - 26.06.
 
 In this week I connected my radio modules with the oled and rotary encoder with my menue.
 
@@ -100,21 +102,77 @@ The header was build out of a string containing 3 numbers:
  - The second number indicated to which terminal the message was supposed to go.
  - The third number indicated from which terminal the message was send.
 
+In this week I also organised the inlay of a cashe register we use at uni-partys to take to measurements of one of the compartments which is supposed to hold the box of my terminal.
+I also decided to add a LED to the Terminal, which indicates if a message is recieved.
 
+After this week my plan was to finish milesonte 2 but I only soldered one of the three terminals and the housing of the terminals was not yet printed.
 
+### 26.06. - 03.07.
 
+In this week I designed the housing of my terminals, made a test print if the housing would fit into the cash-register inlay.
+I also made a test print for the cover of my housing, to see if my measurements for the led, antenna of the radio-module, oled-screen and rotary encoder would fit.
 
+I also soldered the other two terminals and mades some improvements in the code.
 
+### week of presentation until the 05.07.23
 
+In the last days i finished printing the housings and covers for them.
+I wanted to print a second revision for the covers, unfortunately the printer stopped working so I had to go with my first version in the presentation.
 
+### Streiflicht on 05.07
 
+At the [Streiflicht](https://www.uni-ulm.de/in/mi/streiflicht) the whole SwH group had a romm in which we presented our projects to interested guests.
+There were also some lectures which were pretty interesting.
+I really enjoyed the streiflich and the interaction with interest people in my project were good.
+We discussed about further improvements and the hardware I used for my project.
 
+### Conclusion:
 
+I was able to implement the key part of my project, the Terminal and beeing able to communicate between bars.
+
+Unfortunatly there was not enough time to also add a webpage for finances, so that they can recieve the messages via they're laptop. 
+On the other hand they can also just use a terminal to recieve messages which works fine as well.
+The idea for the webpage would have been to use a wemos d1 mini microcontroller to recieve radio signals and log into wifi to submit the information to the webpage.
+
+Another idea was to build a Button myself by using a compliant mechanism, but I also did not have enough time for that.
+
+I spontaneously added an LED to show if something was recievedt which is pretty helpful for usability in my opinion.
+
+## Tools and methods
+
+Compared to my exercise project this project was more on the sowftware side, than the hardware side.
+In my opinion that was pretty good because I'd day my weakness is more in programming than building stuff.
+
+For programming I used visual-studio-code with platform.io, a arduino extention which is way better than the standard arduino IDE. I really enjoyed working with it, because managing librarys is a lot easeier as well as working with more than one arduino (3 terminals) at the same time because you can specify upload ports.
+Syntax highlighting is another big plus for platform.io.
+
+To produce the housing and cover for it I only worked with 3D-printers. In the end one printer stopped working, which was unlucky but other than that I had no problems and really enjoyed working with all the printers in the lab.
+
+To attach the LED, oled-screen and radio-module to the cover I used hot glue which didn't cause any problems either.
+The rotary encoder got attached by the included screw.
+
+For soldering I used the soldering-irons in the lab and my soldering-iron at home and the band saw in the lab to cut the breadboards to size. With the tools in the lab I did not have any problems, for the soldering-iron at home of which the temperature can't be adjusted I learned that pointy soldering tips are bad compared to tips with a wide tip because the heat gets ditributed differently.
+
+## Motivation and feedback for future semesters
+
+I think the most of my motivation for the module came through my existing interests in microcontrolles and building stuff (from lego models to the desk for my pc with screen holders and builtin buttons).
+The lab with all the accessible tools, machines and other usefull stuff was another big motivation, because the posibilities get a lot bigger than with the stuff I have at home.
+At last our main lecturer and also the other lecturers motivated me because if I had questions or problems they always could help me and in genereally hat a lot of usefull input.
+
+I think for the future I generally gained a deeper knowledge about working with microcontrollers, 3D-printers, laser cutters and about the posiblities that you have with those tools, also the projects of fellow students helped with getting inspirations for future projects I want to do myself.
+
+The two main things I learned thorugh my project for the second semester is that even something that seems impossible, because of missing knowledge about the topic and resulting out of that the inability to assess if you will manage to do the project, that it is still possible.
+When pitching the project I was very insecure about the possibility of me finishing the project, but in the end it worked and I learned a lot of new interesting stuff about microcontrollers, radio-signals and -modules. For the first time I also understood the basics of Networks which definitely will help me a lot for my further informatic studies.
+
+In general I am happy with how the module is structured and I also think the topics we got introduced to were helpfull. The only thing I would recommend for future semsesters would be more time for the main project in the second semester. Maybe pitch the project at the end of the first semester so that you have the whole lecture free time and the summer semester for the project.
+The last thing I would note is, that it was quiet hard to find a project that solves a problem or is unique beacuse these days almost everything is in the internet and I think maybe just a new approch to an already existing project is also challanging enough, because I spend a lot of time thinking about a real problem I want to solve that isn't already solved.
 
 ## Final Project
 
 ### Summary of my plan
 
 ### Functions
+
+//video
 
 ### Improvements
