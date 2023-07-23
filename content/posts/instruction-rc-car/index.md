@@ -1,9 +1,11 @@
 ---
-title: "Instructions for Exercise Project"
+title: "Instruction RC Car"
 date: 2023-06-02T13:33:31+02:00
 draft: true
 ---
 I really wanted to write a documentation/building-instructions for my exercise project so here it is!
+
+## Introduction
 
 ## Parts and devices you need
 
