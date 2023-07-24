@@ -10,11 +10,13 @@ This post features the instruction for my bar terminals.
 
 ## Introducition
 
-With this instruction I will show you how to build yourself(bar-) terminals, that use radio signals to send each other predefined messages.
+With this instruction I will show you how to build yourself (bar-) terminals, that use radio signals to send each other predefined messages.
 
 The terminal allows you to select a message and send it to a selected ohter terminal and displays recieved messages on an oled. If a message is recieved a LED turns on to indicate a recieved message.
 
 The messages are send via a radio signal and the terminals are implemented as a really simplified mesh-network so each terminal recieves the message and if the message is not meant for the terminal it forwards the message. This also allows to bridge longer distances than the radio signal can reach.
+
+if you want to read more about the project you can check out this [post]({{< ref "posts/project-second-semester" >}}).
 
 ## Everything you need
 
@@ -36,7 +38,7 @@ For 3 bar-terminals you need the following:
  - Wires
  - shrink tubing
  - hot-glue-sticks
- - 3 x breadboards like those: [Amazon](https://www.amazon.de/-/en/AZDelivery-AZ-Nano-board-Atmega328-including/dp/B078SBBST6/ref=sr_1_3?crid=274FHDIZFJWDZ&keywords=arduino+nano+azdelivery&qid=1690021059&sprefix=arduino+nano+a%2Caps%2C81&sr=8-3)
+ - 3 x pcb like those: [Amazon](https://www.amazon.de/AZDelivery-Lochrasterplatte-Lochrasterplatine-Leiterplatte-Arduino/dp/B078HV79XX/ref=sr_1_7?keywords=pcb&qid=1690202302&sr=8-7)
  - 3 x 9V Battery
  - 3 x Battery clips 9V like those: [Amazon](https://www.amazon.de/Hailege-Battery-I-Type-Leather-Connector/dp/B0BGPG3NCY/ref=sr_1_3?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2YH9ST3W72W7O&keywords=9v+clips&qid=1690198264&sprefix=9v+clips%2Caps%2C97&sr=8-3)
 
@@ -59,13 +61,13 @@ I **always** used 70mm long wires for soldering.
 | :-: |
 | *soldering diagram* |
 
-1. Because the space is limited you need to cut the breadboards to the desired size of 18x11 holes.
+1. Because the space is limited you need to cut the pcbs to the desired size of 18x11 holes.
 
 2. To connect more holes I used a short wire and soldered it to each hole and the pin of the arduino.
 
    | ![img2](breadboard.JPG) | ![img3](5v-gnd-line.JPG) |
    | :-: | :-: |
-   | *cutted breadboard with connection of holes* | *5V and gnd line from top* |
+   | *cutted pcb with connection of holes* | *5V and gnd line from top* |
 
 3. As you can see I only soldered the pins of the arduino, that I needed.
    On the left picture on the left hand side you can see the gnd and 5V line from the bottom. 
@@ -79,29 +81,29 @@ I **always** used 70mm long wires for soldering.
    | :-: |
    | *blue: VIN-wire, black: gnd-wire* |
 
-   If you directly solder the 9V Battery clips onto the breadboard it would be black on gnd and red on VIN.
+   If you directly solder the 9V Battery clips onto the pcb it would be black on gnd and red on VIN.
 
 5. Next you should solder the radio-module.
    1. Solder the 100 µF Capacitor onto the module. :warning: be carefull so that the white side of the capacitor is connected to the gnd pin of the radio-module
    
    2. Now solder all 4 wires to the radio-module.
 
-   3. In the last step you solder the wires from the radio module to your breadboard, start with gnd then 5V and then the two data wires.
+   3. In the last step you solder the wires from the radio module to your pcb, start with gnd then 5V and then the two data wires.
       | ![img6](hc-12.JPG) |
       | :-: |
       | *radio-module with capacitor* |
 
 6. After the radio module continue with soldering the oled-screen.
-   Again, first solder the wires to the screen and then to the breadboard.
-   On the breadboard start with gnd, then 5V, then the data wires.
+   Again, first solder the wires to the screen and then to the pcb.
+   On the pcb start with gnd, then 5V, then the data wires.
 
 7. Now the LED follows.
    First solder the 220 Ω Resistor onto the short leg (cutted side) of the LED.
-   This side also goes onto your gnd line on the breadboard.
+   This side also goes onto your gnd line on the pcb.
    After that solder the other leg of the LED onto the data pin.
 
 8. Next is the rotary encoder:
-   1. First solder all the wires onto the rotary encoder and then the two gnd wires onto the gnd-line on the breadboard.
+   1. First solder all the wires onto the rotary encoder and then the two gnd wires onto the gnd-line on the pcb.
    
    2. After that, solder the three 10 kΩ Resistors onto the 5V-line and then onto the three data pins.
       To prevent short circuits use shrink tubing around the resistors and only leave a small part of the wire unprotected.
@@ -109,7 +111,7 @@ I **always** used 70mm long wires for soldering.
       | :-: |
       | *10 kΩ Resistors with shrink tubing* |
 
-   3. To finish solder the data wires onto the breadboard.
+   3. To finish solder the data wires onto the pcb.
    
 9.  Congratulations you finished soldering everything!
    It should look somewhat like this:
@@ -132,7 +134,12 @@ The terminal just sends a string with 4 numbers which the other terminals then e
 
 To use this code for more than one terminal you just have to change line 51 and 52 in the code.
 
-[Download the following main-class](program-terminal.cpp)
+```C++
+String fromBar = "1"; //change this to the according terminal number
+String barName = "Caipibar (Bar 1)"; //change this to the according 
+```
+
+The whole arduino-sketch:
 
 ``` C++
 #include <Arduino.h> //only for platform.io
