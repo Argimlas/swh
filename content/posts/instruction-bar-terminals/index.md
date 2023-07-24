@@ -6,7 +6,7 @@ draft: false
 
 This post features the instruction for my bar terminals.
 
-**Note:** You can also find all files for he project [here]().
+**Note:** You can also find all files for he project [here](project.zip).
 
 ## Introducition
 
@@ -38,6 +38,7 @@ For 3 bar-terminals you need the following:
  - hot-glue-sticks
  - 3 x breadboards like those: [Amazon](https://www.amazon.de/-/en/AZDelivery-AZ-Nano-board-Atmega328-including/dp/B078SBBST6/ref=sr_1_3?crid=274FHDIZFJWDZ&keywords=arduino+nano+azdelivery&qid=1690021059&sprefix=arduino+nano+a%2Caps%2C81&sr=8-3)
  - 3 x 9V Battery
+ - 3 x Battery clips 9V like those: [Amazon](https://www.amazon.de/Hailege-Battery-I-Type-Leather-Connector/dp/B0BGPG3NCY/ref=sr_1_3?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2YH9ST3W72W7O&keywords=9v+clips&qid=1690198264&sprefix=9v+clips%2Caps%2C97&sr=8-3)
 
 ### Tools
 
@@ -77,6 +78,8 @@ I **always** used 70mm long wires for soldering.
    | ![img5](5V-line.JPG) |
    | :-: |
    | *blue: VIN-wire, black: gnd-wire* |
+
+   If you directly solder the 9V Battery clips onto the breadboard it would be black on gnd and red on VIN.
 
 5. Next you should solder the radio-module.
    1. Solder the 100 µF Capacitor onto the module. :warning: be carefull so that the white side of the capacitor is connected to the gnd pin of the radio-module
@@ -118,18 +121,18 @@ I **always** used 70mm long wires for soldering.
 ## Code
 
 I used visual-studio-code with the platform.io extension to write my program.
-In the zip folder you can download, you can also find a complete platform.io project.
+In the zip folder you can download, you can also find a complete **platform.io project**.
 
 I used the SSD1306Ascii library which is pretty resource-saving, so the ram of the nano is only 50% full.
 
 The code is completely commented and should be self explaining.
 The basic thoughts behind the menue-system are bools to check if screens are active or not and the cursor just overwrites a defined postion on the screen if the rotary encoder is turned in either direction.
 
-The terminal just sends a string with 4 numbers which the other terminals the evaluate.
+The terminal just sends a string with 4 numbers which the other terminals then evaluate.
 
 To use this code for more than one terminal you just have to change line 51 and 52 in the code.
 
-[Download the following main-class](main.cpp)
+[Download the following main-class](program-terminal.cpp)
 
 ``` C++
 #include <Arduino.h> //only for platform.io
@@ -624,10 +627,49 @@ There is not much to say about the box.
 
 ## Assembly
 
+Basically you just glue everything to the cover and put the cover on the box.
+
+1. Start with putting the rotary-encoder through the specified hole and fix it with the included screw
+   | ![img15](rotary-encoder.JPG) |
+   | :-: |
+   | *attachment rotary encoder* |
+
+2. Radio-module
+
+   Now follows the tricky party put the antenna of the radio module from the top through the specified hole of the cover and then solder the radio-module onto it from the bottom-side of the cover.
+
+   After that fix the radio module with hot-glue onto the cover.
+   | ![img16](antenna.JPG) | ![img17](hc-12.JPG) |
+   | :-: | :-: |
+   | *antenna* | *glued radio-module* |
+
+3. Screen and LED
+   
+   Now fix the Screen and LED with hot glue onto the cover.
+   | ![img18](oled-led.JPG) |
+   | :-: |
+   | *oled and LED fixed with hot-glue* |
+
+4. Finished cover
+   
+   The cover should look like this now:
+   | ![img19](finished-cover-bottom.JPG) | ![img20](finished-cover-top.JPG) |
+   | :-: | :-: |
+   | *bottom* | *top* |
+
+5. Put the cover on the box
+   After you glued everything to the cover you just need to add a 9V-Block as a power source, here a switch to cut the power would be usefull, which unfortunately is not yet included.
+
 ## Finished!
 
-//zip
+Congratulations you finished the project!
 
-### license
+| ![img21](terminal.JPG) |
+| :-: |
+| *Finished terminal* |
 
-https://creativecommons.org/licenses/?lang=de
+Again, [here](project.zip) you can download everything you need for the project as a zip-file.
+
+### License
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
