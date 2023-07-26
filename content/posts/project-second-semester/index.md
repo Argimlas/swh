@@ -192,8 +192,101 @@ The last thing I would note is, that it was quiet hard to find a project that so
 
 ### Summary of my plan
 
-### Functions
+My initial idea was to create something that allows bars to communicate with finances to signalise them when they need a refill of change or when the chash registers are getting to full and need to be emptied.
 
-//video
+Out of this came the project of creating bar terminals, that allow the bars at uni-partys to communicate with each other by sending and beeing able to receive predefined messages.
+
+### Final status of my project - features
+
+#### Features in short:
+ - Size fitting to the inlays of cash registers so that it can be placed securely behind the bar.
+     TODO-BILD
+ - Oled-screen to show the menue to select messages to be send and to show received messages
+     TODO-BILD (bei LED mit LED)
+ - LED to better highlite if a message has been received
+ - Rotary encoder to use the menue shown on the screen, select a message, a bar for which the message is meant and finally send it.
+     TODO-BILD
+ - Power supplied by a 9V-Battery so there is no need for an external power source
+
+#### Features explained
+
+The "brain" of the bar-terminal is an arduino nano, basically a mini-cpu.
+Connected to the aruino is a screen as view for the user, a rotary encoder as controller, a LED as another indicator for the user as well a radio module to send and recieve messages.
+
+**Menue on the oled-screen with rotary encoder and LED:**
+   
+The terminal can be controlled by a user by using the rotary-encoder. The user can see his or her manipulations by the rotary-encoder on the oled-screen.
+
+Standard the oled screen shows a main-screen of my implemented menue.
+
+TODO-BILD
+
+By pressing the rotary encoder the oled shows the screen which shows all the prefedined message for the user to select one.
+
+TODO-BILD
+
+The message can be selected by turning the rotary encoder in either direction. A selected message is marked with this symbol: ">".
+
+There is also an option for the user to return out of the message-selection-screen back to the start screen.
+
+TODO-BILD
+
+As said, a message is selected by the ">"-symbol to continue with selecting a bar the user has to press the rotary encoder again.
+
+The next screen, to select a bar to which the message is supposed to be send, is quiet similar to the screen for selecting a message.
+
+Again, a bar is selected by turning the rotary encoder in either direction and by pressing the rotary encoder the message selected by the ">"-symbol gets send.
+
+TODO-Bild
+
+After sending the message you automatically return to the main screen which informs the user that the message has been send.
+
+TODO-Bild
+
+A terminal can only receive a message if the main-screen is active. That means that while selecting a message and bar, the terminal can't receive messages.
+
+If a message is received the LED turns on and the message gets displayed on the main menue.
+
+TODO-Bild
+
+The LED can be turned of by pressing the rotary encoder once, then also the received message dissapears.
+
+**Sending and receiving messages:**
+
+Sending and receiving messages works because of the radio-module.
+
+It communicates over 433mHz radio signals with the other radio-modules in other terminals.
+
+This allows the terminals to work completely independent.
+Which is usefull on partys because the wifi access-point as well as mobile networks are often overloaded.
+
+Sending and receiving is implemented as a simplified "mesh-network".
+This means that if a terminal sends a message **every** terminal in signal reach will recieve the message.
+
+The message consists of four letters that are numbers:
+ - First number: Indicates to which terminal the message is supposed to be send.
+ - Second number: Indicates from which terminal the message has been send
+ - Third number: Indicates which message has been send.
+ - Fourth number: To help prevent loops caused by forwarding aka "forwarding-bit".
+
+If a terminal receives a message, it first checks if the message is meant for this terminal by reading the first number, if the number matches the number of this terminal it will display the message on the oled-screen and turn on the LED.
+
+If the message is **not** meant for this terminal, the message gets forwarded and the last number is safed so that the message can't be forwarded again.
+Forwarding basically just means that the message gets resend to evey terminal in range, a terminal forwards a message just **once**.
+
+Forwarding allows to "bridge" between two or more terminals which increases the distance between terminals over the possible range of the radio signal.
+
+TODO-VIDEO
 
 ### Improvements
+
+The only function that worked not as well on my presentation on streiflicht was that forwarding sometimes created loops.
+I thought I had solved it but there still were some errors, but they now should be fixed.
+
+Other than that everything worked out as I hoped, but there are still a lot of possible improvements:
+ - Switch to turn of the battery
+ - If a message is received, the length of the message can be checked to see if the message received completely.
+   - with this feature included a **acknowledgement message** that gets send back to the original sender of the message would be usefull.
+
+      This allows to signalise the sender of a message, if the message has been received or not or if the message is to short. This way the sender could resend the message if necesssary, because rigth now the sender assumes that the message will be received and if not the message is just lost.
+ - I also thought of a wifi integration that allows for instance finances to receive the messages that are meant for them over a website. The reason for this is that finances on unipartys is located in a room further away from the party ground and able to use laptops, because the laptops are not as exposed to damage as behind a bar.
