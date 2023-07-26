@@ -15,8 +15,8 @@ dateFormat = "2 January 2006"
 [author]
   name = "Argimlas"
   image = "img/blowfish_logo.png"
-  headline = "I'm only human"
-  bio = "A little bit about you"
+  headline = "aka Jakob"
+  bio = "Likes to build and create"
   links = [
   #   { email = "mailto:jakob.kuhnle@uni-ulm.de" },
   #   { link = "https://link-to-some-website.com/" },
