@@ -105,9 +105,9 @@ When a message was send, every other terminal received it and decided based on t
 
 If the message was meant for that terminal it displayed the message, otherwise the message got forwarded.
 
-| ![img4]() | ![img5]() |
+| ![img4](message-send.JPG) | ![img5](message-send.JPG) |
 | :-: | :-: |
-| ** | ** |
+| *message send* | *message received* |
 
 The header was build out of a string containing 3 numbers:
  - The first number indicated which message was send.
