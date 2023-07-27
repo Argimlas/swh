@@ -8,15 +8,15 @@ This post features the instruction for my bar terminals.
 
 **Note:** You can also find all files for the project [here](project.zip).
 
-## Introducition
+## Introduction
 
-With this instruction I will show you how to build yourself (bar-) terminals, that use radio signals to send each other predefined messages.
+With this instruction, I will show you how to build yourself (bar-) terminals, that use radio signals to send each other predefined messages.
 
-The terminal allows you to select a message and send it to a selected ohter terminal and displays recieved messages on an oled. If a message is recieved a LED turns on to indicate a recieved message.
+The terminal allows you to select a message and send it to a selected other terminal and displays receive messages on an oled. If a message is received a LED turns on to indicate the received message.
 
-The messages are send via a radio signal and the terminals are implemented as a really simplified mesh-network so each terminal recieves the message and if the message is not meant for the terminal it forwards the message. This also allows to bridge longer distances than the radio signal can reach.
+The messages are sent via a radio signal and the terminals are implemented as a really simplified mesh-network so each terminal receives the message and if the message is not meant for the terminal it forwards the message. This also allows to bridge longer distances than the radio signal can reach.
 
-if you want to read more about the project you can check out this [post]({{< ref "posts/project-second-semester" >}}).
+If you want to read more about the project you can check out this [post]({{< ref "posts/project-second-semester" >}}).
 
 ## Everything you need
 
@@ -24,7 +24,7 @@ For 3 bar-terminals you need the following:
 
 ### Parts
  - 3 x HC-12 radio module: [Amazon](https://www.amazon.de/dp/B07C92ZRS8?psc=1&ref=ppx_yo2ov_dt_b_product_details)
- - 3 x Arduino nano: [Amazon](https://www.amazon.de/-/en/AZDelivery-AZ-Nano-board-Atmega328-including/dp/B078SBBST6/ref=sr_1_3?crid=274FHDIZFJWDZ&keywords=arduino+nano+azdelivery&qid=1690021059&sprefix=arduino+nano+a%2Caps%2C81&sr=8-3)
+ - 3 x Arduino Nano: [Amazon](https://www.amazon.de/-/en/AZDelivery-AZ-Nano-board-Atmega328-including/dp/B078SBBST6/ref=sr_1_3?crid=274FHDIZFJWDZ&keywords=arduino+nano+azdelivery&qid=1690021059&sprefix=arduino+nano+a%2Caps%2C81&sr=8-3)
  - 3 x 128x64 oled: [Amazon](https://www.amazon.de/-/en/dp/B074N9VLZX/ref=twister_B07ZQNB1HL?_encoding=UTF8&psc=1)
  - 3 x EC12 rotary encoder: [Amazon](https://www.amazon.de/dp/B08728PS6N?psc=1&ref=ppx_yo2ov_dt_b_product_details)
  - 3 x Red LEDs (5mm)
@@ -54,7 +54,7 @@ For 3 bar-terminals you need the following:
 
 ## Soldering
 
-In the following image you can see how everything is supposed to be wired up.
+In the following image, you can see how everything is supposed to be wired up.
 I **always** used 70mm long wires for soldering.
 
 | ![img1](terminal_fritzing.png) |
@@ -63,14 +63,14 @@ I **always** used 70mm long wires for soldering.
 
 1. Because the space is limited you need to cut the pcbs to the desired size of 18x11 holes.
 
-2. To connect more holes I used a short wire and soldered it to each hole and the pin of the arduino.
+2. To connect more holes I used a short wire and soldered it to each hole and the pin of the Arduino.
 
    | ![img2](breadboard.JPG) | ![img3](5v-gnd-line.JPG) |
    | :-: | :-: |
    | *cutted pcb with connection of holes* | *5V and gnd line from top* |
 
-3. As you can see I only soldered the pins of the arduino, that I needed.
-   On the left picture on the left hand side you can see the gnd and 5V line from the bottom. 
+3. As you can see I only soldered the pins of the Arduino, that I needed.
+   On the left picture on the left-hand side you can see the gnd and 5V line from the bottom. 
    The next step would be to connect the gnd-arduino-pin with the gnd line and the 5V pin with the 5V line.
    | ![img4](gnd-line.JPG) | ![img5](5V-line.JPG) |
    | :-: | :-: |
@@ -84,7 +84,7 @@ I **always** used 70mm long wires for soldering.
    If you directly solder the 9V Battery clips onto the pcb it would be black on gnd and red on VIN.
 
 5. Next you should solder the radio-module.
-   1. Solder the 100 µF Capacitor onto the module. :warning: be carefull so that the white side of the capacitor is connected to the gnd pin of the radio-module
+   1. Solder the 100 µF Capacitor onto the module. :warning: be careful so that the white side of the capacitor is connected to the gnd pin of the radio-module
    
    2. Now solder all 4 wires to the radio-module.
 
@@ -98,8 +98,8 @@ I **always** used 70mm long wires for soldering.
    On the pcb start with gnd, then 5V, then the data wires.
 
 7. Now the LED follows.
-   First solder the 220 Ω Resistor onto the short leg (cutted side) of the LED.
-   This side also goes onto your gnd line on the pcb.
+   First solder the 220 Ω Resistor onto the short leg (cut side) of the LED.
+   This site also goes onto your gnd line on the pcb.
    After that solder the other leg of the LED onto the data pin.
 
 8. Next is the rotary encoder:
@@ -123,23 +123,23 @@ I **always** used 70mm long wires for soldering.
 ## Code
 
 I used visual-studio-code with the platform.io extension to write my program.
-In the zip folder you can download, you can also find a complete **platform.io project**.
+In the zip folder, you can download, you can also find a complete **platform.io project**.
 
 I used the SSD1306Ascii library which is pretty resource-saving, so the ram of the nano is only 50% full.
 
-The code is completely commented and should be self explaining.
-The basic thoughts behind the menue-system are bools to check if screens are active or not and the cursor just overwrites a defined postion on the screen if the rotary encoder is turned in either direction.
+The code is completely commented and should be self-explaining.
+The basic thoughts behind the menu-system are bools to check if screens are active or not and the cursor just overwrites a defined position on the screen if the rotary encoder is turned in either direction.
 
 The terminal just sends a string with 4 numbers which the other terminals then evaluate.
 
-To use this code for more than one terminal you just have to change line 51 and 52 in the code.
+To use this code for more than one terminal you just have to change lines 51 and 52 in the code.
 
 ```C++
 String fromBar = "1"; //change this to the according terminal number
 String barName = "Caipibar (Bar 1)"; //change this to the according 
 ```
 
-The whole arduino-sketch:
+The whole Arduino-sketch:
 
 ``` C++
 #include <Arduino.h> //only for platform.io
@@ -591,12 +591,12 @@ void clearCursors() {
 
 ## 3D-printing
 
-Now you need to print the housing of the Termial.
+Now you need to print the housing of the terminal.
 It consists of two parts, the box and the cover.
 
-The measurements of my housing are made for a specific cash register we use at our uni-partys, if you want to fit the terminal into your cash register you probably have to take the measurements by yourself and design your own box.
+The measurements of my housing are made for a specific cash register we use at our uni-partys, if you want to fit the terminal into your cash register you probably have to take the measurements by yourself and design your box.
 
-For printing you dont need support structure!
+For printing you don't need a support structure!
 
 ### cover
 
@@ -604,10 +604,10 @@ For printing you dont need support structure!
 | :-: | :-: |
 | *Top* | *Bottom* |
 
-The cover has four openings as you can see on the "Top"-image:
+The cover has four openings as you can see in the "Top"-image:
  - in the Back: small hole for the antenna
- - right hand side: hole for the LED
- - inbetween those two holes: opening for the oled-screen
+ - right-hand side: hole for the LED
+ - in between those two holes: opening for the oled-screen
  - in the middle of the picture: hole for the rotary encoder
 
 Some measurements so you don't have to get them again:
@@ -634,7 +634,7 @@ There is not much to say about the box.
 
 ## Assembly
 
-Basically you just glue everything to the cover and put the cover on the box.
+Basically, you just glue everything to the cover and put the cover on the box.
 
 1. Start with putting the rotary-encoder through the specified hole and fix it with the included screw
    | ![img15](rotary-encoder.JPG) |
@@ -643,7 +643,7 @@ Basically you just glue everything to the cover and put the cover on the box.
 
 2. Radio-module
 
-   Now follows the tricky party put the antenna of the radio module from the top through the specified hole of the cover and then solder the radio-module onto it from the bottom-side of the cover.
+   Now follows the tricky party put the antenna of the radio module from the top through the specified hole of the cover and then solder the radio-module onto it from the bottom side of the cover.
 
    After that fix the radio module with hot-glue onto the cover.
    | ![img16](antenna.JPG) | ![img17](hc-12.JPG) |
@@ -665,7 +665,7 @@ Basically you just glue everything to the cover and put the cover on the box.
    | *bottom* | *top* |
 
 5. Put the cover on the box
-   After you glued everything to the cover you just need to add a 9V-Block as a power source, here a switch to cut the power would be usefull, which unfortunately is not yet included.
+   After you glued everything to the cover you just need to add a 9V-Block as a power source, here a switch to cut the power would be useful, which unfortunately is not yet included.
 
 ## Finished!
 
