@@ -199,13 +199,16 @@ Out of this came the project of creating bar terminals, that allow the bars at u
 ### Final status of my project - features
 
 #### Features in short:
- - Size fitting to the inlays of cash registers so that it can be placed securely behind the bar.
-     TODO-BILD
+ - Size fitting to the inlays of cash registers so that it can be placed securely behind a bar.
  - Oled-screen to show the menue to select messages to be send and to show received messages
-     TODO-BILD (bei LED mit LED)
  - LED to better highlite if a message has been received
+   | ![img7](message-received.JPG) |
+   | :-: |
+   | *recieved message* |
  - Rotary encoder to use the menue shown on the screen, select a message, a bar for which the message is meant and finally send it.
-     TODO-BILD
+   | ![img8](rotary-encoder.JPG) |
+   | :-: |
+   | *rotary encoder* |
  - Power supplied by a 9V-Battery so there is no need for an external power source
 
 #### Features explained
@@ -219,35 +222,48 @@ The terminal can be controlled by a user by using the rotary-encoder. The user c
 
 Standard the oled screen shows a main-screen of my implemented menue.
 
-TODO-BILD
+| ![img9](main-menue.JPG) |
+| :-: |
+| *main menue* |
 
 By pressing the rotary encoder the oled shows the screen which shows all the prefedined message for the user to select one.
 
-TODO-BILD
+| ![img10](message-menue.JPG) |
+| :-: |
+| *message menue* |
 
 The message can be selected by turning the rotary encoder in either direction. A selected message is marked with this symbol: ">".
 
 There is also an option for the user to return out of the message-selection-screen back to the start screen.
 
-TODO-BILD
+| ![img11](back-option.JPG) |
+| :-: |
+| *back option* |
 
-As said, a message is selected by the ">"-symbol to continue with selecting a bar the user has to press the rotary encoder again.
+As said, a message is selected by the ">"-symbol.
+To continue with selecting a bar the user has to press the rotary encoder again.
 
 The next screen, to select a bar to which the message is supposed to be send, is quiet similar to the screen for selecting a message.
 
-Again, a bar is selected by turning the rotary encoder in either direction and by pressing the rotary encoder the message selected by the ">"-symbol gets send.
+| ![img12](bar-menue.JPG) |
+| :-: |
+| *bar menue* |
 
-TODO-Bild
+Again, a bar is selected by turning the rotary encoder in either direction and by pressing the rotary encoder the message selected by the ">"-symbol gets send.
 
 After sending the message you automatically return to the main screen which informs the user that the message has been send.
 
-TODO-Bild
+| ![img13](message-send.JPG) |
+| :-: |
+| *message send* |
 
 A terminal can only receive a message if the main-screen is active. That means that while selecting a message and bar, the terminal can't receive messages.
 
 If a message is received the LED turns on and the message gets displayed on the main menue.
 
-TODO-Bild
+| ![img14](message-received.JPG) |
+| :-: |
+| *message received* |
 
 The LED can be turned of by pressing the rotary encoder once, then also the received message dissapears.
 
