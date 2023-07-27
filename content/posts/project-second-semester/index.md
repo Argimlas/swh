@@ -270,6 +270,10 @@ If a message is received the LED turns on and the message gets displayed on the 
 
 The LED can be turned of by pressing the rotary encoder once, then also the received message disappears.
 
+Here you can see the menu of my terminals in action:
+
+{{< youtube EBTl-GV2o-k >}}
+
 **Sending and receiving messages:**
 
 Sending and receiving messages works because of the radio-module.
@@ -295,7 +299,9 @@ Forwarding basically just means that the message gets resend to every terminal i
 
 Forwarding allows to "bridge" between two or more terminals which increases the distance between terminals over the possible range of the radio signal.
 
-TODO-VIDEO
+Here you can see three terminals interacting with each other:
+
+{{< youtube 9Hhc5qoijVg >}}
 
 ### Improvements
 
