@@ -7,13 +7,15 @@ baseURL = "https://argimlas.github.io/swh/"
 defaultContentLanguage = "en"
 
 enableRobotsTXT = true
-paginate = 20
 summaryLength = 30
 
 buildDrafts = false
 buildFuture = false
 
 # googleAnalytics = "G-XXXXXXXXX"
+
+[pagination]
+  pagerSize = 10
 
 [taxonomies]
   tag = "tags"
